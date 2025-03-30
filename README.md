@@ -1,4 +1,4 @@
-# -cursor-ESP8266-
+# cursor-ESP8266
 这是一个利用cursor制作基于ESP8266开发版的远程遥控车，由我自己提供指令，cursor制作完成
 
 # 物联网小车控制系统
@@ -36,7 +36,7 @@
 
 1. 进入服务器目录并安装依赖：
 ```bash
-cd iot-car/server
+cd cursor-ESP8266/server
 npm install
 ```
 
@@ -59,7 +59,7 @@ npm start
 
 ### ESP8266固件烧录
 
-1. 使用Arduino IDE打开`iot-car/esp8266-firmware/esp8266-firmware.ino`
+1. 使用Arduino IDE打开`cursor-ESP8266/esp8266-firmware/esp8266-firmware.ino`
 2. 安装必要的库：
    - WebSocketsClient
    - ArduinoJson
