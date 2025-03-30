@@ -1,0 +1,49 @@
+<!DOCTYPE html> <!-- 声明文档类型为HTML5 -->
+<html lang="zh-CN"> <!-- 指定页面语言为中文 -->
+<head> <!-- 头部信息开始 -->
+  <meta charset="UTF-8"> <!-- 设置字符编码为UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- 响应式设计配置，禁止用户缩放 -->
+  <title>物联网小车控制系统</title> <!-- 页面标题 -->
+  <link rel="stylesheet" href="style.css"> <!-- 引入CSS样式表 -->
+  <script src="https://cdn.jsdelivr.net/npm/nipplejs@0.10.1/dist/nipplejs.min.js"></script> <!-- 引入nipplejs虚拟摇杆库 -->
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script> <!-- 引入Socket.IO客户端库 -->
+</head> <!-- 头部信息结束 -->
+<body> <!-- 页面主体开始 -->
+  <div class="container landscape-mode"> <!-- 主容器，默认为横屏模式 -->
+    <header> <!-- 页面头部区域 -->
+      <h1>物联网小车控制系统</h1> <!-- 页面标题 -->
+      <div class="status-bar"> <!-- 状态栏容器 -->
+        <div id="connection-status">连接状态: 未连接</div> <!-- 显示连接状态 -->
+        <div id="device-ip">设备IP: --</div> <!-- 显示设备IP地址 -->
+        <div id="network-delay">网络延迟: --ms</div> <!-- 显示网络延迟 -->
+        <div id="battery-level">电池电压: --V</div> <!-- 显示电池电压 -->
+        <div id="signal-strength">信号强度: --%</div> <!-- 显示信号强度 -->
+      </div> <!-- 状态栏容器结束 -->
+    </header> <!-- 页面头部区域结束 -->
+
+    <div class="control-panel"> <!-- 控制面板容器 -->
+      <div class="joystick-container"> <!-- 左侧摇杆容器(后轮驱动) -->
+        <div class="joystick-label">后轮驱动</div> <!-- 摇杆标签 -->
+        <div id="speed-joystick" class="joystick"></div> <!-- 速度摇杆元素 -->
+        <div id="speed-value">0%</div> <!-- 速度值显示 -->
+      </div> <!-- 左侧摇杆容器结束 -->
+      
+      <div class="joystick-container"> <!-- 右侧摇杆容器(前轮转向) -->
+        <div class="joystick-label">前轮转向</div> <!-- 摇杆标签 -->
+        <div id="direction-joystick" class="joystick"></div> <!-- 方向摇杆元素 -->
+        <div id="direction-value">0°</div> <!-- 方向值显示 -->
+      </div> <!-- 右侧摇杆容器结束 -->
+    </div> <!-- 控制面板容器结束 -->
+
+    <div class="device-selector"> <!-- 设备选择区域 -->
+      <label for="device-select">选择设备:</label> <!-- 设备选择标签 -->
+      <select id="device-select"> <!-- 设备下拉选择框 -->
+        <option value="">请选择一个设备</option> <!-- 默认选项 -->
+      </select> <!-- 设备下拉选择框结束 -->
+      <button id="connect-btn">连接</button> <!-- 连接按钮 -->
+    </div> <!-- 设备选择区域结束 -->
+  </div> <!-- 主容器结束 -->
+
+  <script src="main.js"></script> <!-- 引入JavaScript主脚本 -->
+</body> <!-- 页面主体结束 -->
+</html> <!-- HTML文档结束 --> 
